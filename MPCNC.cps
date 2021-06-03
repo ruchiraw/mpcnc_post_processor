@@ -802,7 +802,7 @@ function laserOn(power) {
   else {
     var laser_pwm = power / 100 * 255;
 
-    switch (properties.cutter4_MarlinMode) {
+    switch (Number(properties.cutter4_MarlinMode)) {
       case 106:
         writeBlock(mFormat.format(106), sFormat.format(laser_pwm));
         break;
@@ -828,7 +828,7 @@ function laserOff() {
 
   // Default
   else {
-    switch (properties.cutter4_MarlinMode) {
+    switch (Number(properties.cutter4_MarlinMode)) {
       case 106:
         writeBlock(mFormat.format(107));
         break;
